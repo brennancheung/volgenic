@@ -1,0 +1,7 @@
+export const DOM = 'DOM'
+export const TEXT = 'TEXT'
+export const EXPR = 'EXPR'
+export const STREAM = 'STREAM'
+export const STRING_CONCAT = 'STRING_CONCAT'
+export const STRING_LITERAL = 'STRING_LITERAL'
+export const SCOPE_ACCESSOR = 'SCOPE_ACCESSOR'
