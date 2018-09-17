@@ -22,7 +22,8 @@
     "comma-dangle": 0,
     "no-new": 0,
     "space-infix-ops": 0,
-    "no-unused-vars": ["error", {"varsIgnorePattern": "Snabbdom"}]
+    "no-unused-vars": ["error", {"varsIgnorePattern": "Snabbdom"}],
+    "react/jsx-uses-vars": 2,
   },
 
   "settings": {

@@ -5,6 +5,7 @@ import uuid from 'uuid'
 import createZone from './zone'
 
 import NewGame from './screens/NewGame'
+import MainGame from './screens/MainGame'
 
 const JSONView = ({ json }) => <pre>{JSON.stringify(json, null, 4)}</pre>
 const log = (...args) => console.log(...args)
@@ -19,7 +20,7 @@ const Main = (scope) => {
   return (
     <div hook-create={componentDidMount}>
       {screen === 'NewGame' && <NewGame scope={scope} />}
-      <pre>{JSON.stringify(scope.state, null, 4)}</pre>
+      {screen === 'Playing' && <MainGame scope={scope} />}
     </div>
   )
 }

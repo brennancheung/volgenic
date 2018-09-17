@@ -1,5 +1,5 @@
-import createScope from './scope'
 import context from './context'
+import scope from './Game'
 
 let Main = require('./Main').default
 
@@ -12,15 +12,6 @@ var patch = snabbdom.init([ // Init patch function with chosen modules
 ])
 
 let vnode
-
-const initialValue = {
-  screen: 'NewGame',
-  settings: {},
-}
-
-const scope = createScope({
-  state: { local: true, initialValue }
-})
 
 context.onChange(() => {
   // Don't do anything.  We will re-render on `requestAnimationFrame`
