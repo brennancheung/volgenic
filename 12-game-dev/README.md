@@ -42,3 +42,7 @@ it.
 that I immediately thinking in those terms.  However, I'm not bound by the
 normal React limitations.  I didn't investigate it much because I didn't really
 need `context` but I think in future 
+
+Passing in `scope` got cumbersome and ended up with a lot of "prop drilling".
+I think instead, I can just use an `import scope`.  I will experiment with that
+in my next design.
