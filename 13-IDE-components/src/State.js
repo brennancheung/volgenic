@@ -1,10 +1,31 @@
 // Global state object
+
+import Snabbdom from 'snabbdom-pragma'
 import createScope from './scope'
 
 const initialValue = {
   screen: 'Modeler',
   componentData: [
-    { type: 'Paragraph', contents: 'Hover over me to see the overlay.' }
+    {
+      type: 'Paragraph',
+      props: [
+        {
+          type: 'string',
+          name: 'contents',
+          value: 'Hover over me to see the overlay.'
+        }
+      ],
+    },
+    {
+      type: 'Heading3',
+      props: [
+        {
+          type: 'string',
+          name: 'contents',
+          value: 'I am a title'
+        }
+      ],
+    },
   ],
   settings: {},
 }
