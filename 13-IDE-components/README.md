@@ -6,7 +6,7 @@ This experiment aims to discover the architectural patterns needed to build
 an IDE that allows for dynamic components to be manipulated in a browser-based
 IDE.
 
-I'm more concerned with the rendering and architectural aspects but if I might
+I'm more concerned with the rendering and architectural aspects but I might
 implement more of the UX depending on where things end up.
 
 ## Requirements

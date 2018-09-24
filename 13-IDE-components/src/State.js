@@ -3,6 +3,9 @@ import createScope from './scope'
 
 const initialValue = {
   screen: 'Modeler',
+  componentData: [
+    { type: 'Paragraph', contents: 'Hover over me to see the overlay.' }
+  ],
   settings: {},
 }
 
