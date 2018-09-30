@@ -9,13 +9,17 @@ const PropertyEditor = ({ prop, component }) => {
   }
 
   const inputStyle = {
-    width: '100%',
+    width: '98%',
     height: '20px',
   }
 
+  const style = {
+    'background-color': '#ccc',
+    padding: '10px',
+  }
   return (
-    <div>
-      <h3>{prop.name}</h3>
+    <div style={style}>
+      <div>{prop.name}</div>
       <input style={inputStyle} type="text" value={prop.value} on-input={handleChange} />
     </div>
   )
@@ -23,18 +27,19 @@ const PropertyEditor = ({ prop, component }) => {
 const PropertyInspector = ({ component }) => {
   const style = {
     width: '500px',
+    'background-color': '#eee',
   }
 
   const typeStyle = {
     'text-transform': 'uppercase',
+    'font-weight': 'bold',
   }
-
-  if (!component) { return null }
 
   const renderPropEditor = () => {
     return (
       <div>
         <div style={typeStyle}>{component.type}</div>
+        <br />
         {component.props.map(prop => <PropertyEditor prop={prop} component={component} />)}
       </div>
     )
@@ -42,7 +47,7 @@ const PropertyInspector = ({ component }) => {
 
   return (
     <div style={style}>
-      <h3>Property Inspector</h3>
+      <h2>Property Inspector</h2>
       {component && renderPropEditor()}
     </div>
   )

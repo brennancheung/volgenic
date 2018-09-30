@@ -26,9 +26,4 @@ const Main = (scope) => {
   )
 }
 
-window.addEventListener('click', () => {
-  const event = new CustomEvent('overlay-deselect', {})
-  window.dispatchEvent(event)
-})
-
 export default Main

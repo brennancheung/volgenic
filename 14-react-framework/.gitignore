@@ -1,0 +1,15 @@
+build/*
+output/*
+dist/*
+plugins/*
+config.js
+!src/stories/config.js
+._*
+.DS_Store
+.idea
+node_modules/
+npm-debug.log
+.*.swp
+.*.swo
+coverage/*
+.vscode
