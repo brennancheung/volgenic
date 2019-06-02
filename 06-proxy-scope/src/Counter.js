@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 import Snabbdom from 'snabbdom-pragma'
 
 const ComponentWithInterval = (scope) => {
@@ -32,13 +34,9 @@ const ComponentWithInterval = (scope) => {
 const Counter = scope => {
   const handleClick = () => scope.i++
 
-  const Count = () => <span>{scope.i}</span>
-
   return (
-    <div
-      on-click={handleClick}
-    >
-      Count: <Count />
+    <div on-click={handleClick} >
+      Count: {scope.i}
       &nbsp;
       {scope.i < 10 && <ComponentWithInterval key="foo" />}
     </div>

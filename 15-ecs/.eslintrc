@@ -1,0 +1,32 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "mocha": true,
+    "jest": true,
+    "jquery": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "parser": "babel-eslint",
+  },
+  "plugins": [
+    "import",
+  ],
+  "extends": ["standard"],
+
+  "rules": {
+    "camelcase": 0,
+    "comma-dangle": 0,
+    "no-new": 0,
+    "space-infix-ops": 0,
+    "no-unused-vars": ["error", {"varsIgnorePattern": "Snabbdom"}]
+  },
+
+  "settings": {
+    "import/parser": "babel-eslint",
+  },
+  "globals": {
+  }
+}
