@@ -1,10 +1,8 @@
-let App = require('./App.js').default
+import app from './app'
 
-App()
-
-if (module.hot) {
-  module.hot.accept('./App.js', () => {
-    App = require('./App.js').default
-    App()
-  })
-}
+const body = document.querySelector('body')
+body.innerHTML = ''
+const appDiv = document.createElement('div')
+appDiv.setAttribute('id', 'app')
+body.appendChild(appDiv)
+app(appDiv)
