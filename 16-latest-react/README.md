@@ -32,6 +32,11 @@ I will work towards my transistor logic game as the basic idea for the applicati
 
 ## Discoveries
 
+`setInterval` does not work inside of `useEffect`.  It's rather complicated why.
+This is further evidence IMO of why React hooks are such a bad design.  I found
+several articles talking about it and am going to include the utility hook (`useInterval`)
+from a blog article (https://overreacted.io/making-setinterval-declarative-with-react-hooks/).
+
 ## Steps to create a new React project
 
 1.  Upgrade `create-react-app` using `npm i -g create-react-app`.
@@ -47,7 +52,6 @@ I will work towards my transistor logic game as the basic idea for the applicati
 
 * `ALE` did not seem to be linting.  I took the following steps.  I'm not sure what fixed it.
 * `npm i -g eslint`
-* `npm i -D eslint`
 * `eslint src/App.js`
 
 I suspect the Vim was not communicating with eslint.  I'm not sure if it couldn't find it
