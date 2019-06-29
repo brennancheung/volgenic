@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ComponentUsingAppContext from './ComponentUsingAppContext'
+import Workspace from './Workspace'
 import './App.css'
 
 export const AppContext = React.createContext()
@@ -9,7 +9,7 @@ function App () {
   return (
     <div className="App">
       <AppContext.Provider value={{ ...context, setContext }}>
-        <ComponentUsingAppContext />
+        <Workspace />
       </AppContext.Provider>
     </div>
   )

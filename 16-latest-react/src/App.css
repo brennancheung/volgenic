@@ -1,3 +1,19 @@
 .App {
 }
 
+.workspace {
+  display: flex;
+}
+
+.parts-bin {
+  width: 200px;
+  height: 100vh;
+  background-color: #f0f0ff;
+
+}
+
+.canvas {
+  width: 800px;
+  background-color: #f0f0f0;
+  height: 100vh;
+}
