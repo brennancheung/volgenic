@@ -37,6 +37,18 @@ This is further evidence IMO of why React hooks are such a bad design.  I found
 several articles talking about it and am going to include the utility hook (`useInterval`)
 from a blog article (https://overreacted.io/making-setinterval-declarative-with-react-hooks/).
 
+`state` is stale with certain types of "external" callbacks (`addEventListener`, `setTimeout`).
+It is yet another side effect of the design and breaks the standard scoping rules.  The `state`
+will be bound to the first render.  New calls to render generate new `state` values so their
+references become stale.  React recommends keeping this kind of `state` in a `ref`.
+
+When using `addEventListener` and `removeEventListener` any handlers defined within
+the function get updated each render.  This is a problem when using `removeEventListener`
+because the handler that was added does not match, and so it can't be removed.  To work
+around this issue it is necessary to wrap the handler with `useCallback(/* handler */, [])`.
+This ensures the handler remains the same across all renders.
+
+
 ## Steps to create a new React project
 
 1.  Upgrade `create-react-app` using `npm i -g create-react-app`.
