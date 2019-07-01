@@ -5,13 +5,12 @@ import useDraggable from '../util/useDraggable'
 // <img src="/images/parts/transistor.png" alt="" width="100" height="100" />
 //
 const Transistor = ({ x = 50, y = 50, r = 10, stroke = 'black' }) => {
-  const { xPos, yPos, dragging, svgProps } = useDraggable({ x, y })
-  const transform = `translate(${xPos}, ${yPos})`
+  const { dragging, svgProps } = useDraggable({ x, y })
   const fill = dragging ? 'red' : 'green'
 
   return (
-    <svg {...svgProps}>
-      <circle transform={transform} cx="0" cy="0" r={r} fill={fill} stroke={stroke} />
+    <svg>
+      <circle {...svgProps} cx="0" cy="0" r={r} fill={fill} stroke={stroke} />
     </svg>
   )
 }
