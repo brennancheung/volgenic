@@ -1,4 +1,6 @@
 import React, { useRef } from 'react'
+import DragDropManager from './DragDropManager'
+import PartsBin from '../parts/PartsBin'
 import Transistor from '../parts/Transistor'
 
 export const CanvasContext = React.createContext()
@@ -7,17 +9,19 @@ const Canvas = () => {
   const canvasRef = useRef()
   return (
     <div className="canvas">
-      <h3>Canvas</h3>
       <CanvasContext.Provider value={canvasRef}>
-        <svg
-          ref={canvasRef}
-          width="600"
-          height="600"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
-        >
-          <Transistor />
-        </svg>
+        <DragDropManager>
+          <svg
+            ref={canvasRef}
+            width="1000"
+            height="1000"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+          >
+            <PartsBin />
+            <Transistor />
+          </svg>
+        </DragDropManager>
       </CanvasContext.Provider>
     </div>
   )

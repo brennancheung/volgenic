@@ -1,13 +1,17 @@
 import React from 'react'
-import Transistor from './Transistor'
+import useDropTarget from '../util/useDropTarget'
 
 const PartsBin = () => {
+  const props = useDropTarget({
+    x: 0,
+    y: 0,
+    width: 150,
+    height: 1000,
+  })
   return (
-    <div className="parts-bin">
-      <h3>Parts Bin</h3>
-      <br />
-      <Transistor />
-    </div>
+    <svg>
+      <rect {...props} stroke="black" fill="#f0f0ff" />
+    </svg>
   )
 }
 

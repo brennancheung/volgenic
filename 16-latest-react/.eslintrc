@@ -25,6 +25,7 @@
     "quotes": 0,
     "jsx-quotes": 0,
     "react/jsx-quotes": 0,
+    "react/prop-types": 0,
   },
 
   "settings": {

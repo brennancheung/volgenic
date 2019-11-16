@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Workspace from './Workspace'
+import Canvas from './canvas/Canvas'
 import './App.css'
 
 export const AppContext = React.createContext()
@@ -9,7 +9,7 @@ function App () {
   return (
     <div className="App">
       <AppContext.Provider value={{ ...context, setContext }}>
-        <Workspace />
+        <Canvas />
       </AppContext.Provider>
     </div>
   )

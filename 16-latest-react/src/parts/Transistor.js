@@ -6,7 +6,7 @@ import useDraggable from '../util/useDraggable'
 //
 const Transistor = ({ x = 50, y = 50, r = 10, stroke = 'black' }) => {
   const { dragging, svgProps } = useDraggable({ x, y })
-  const fill = dragging ? 'red' : 'green'
+  const fill = dragging ? 'blue' : 'grey'
 
   return (
     <svg>
