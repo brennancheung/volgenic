@@ -1,0 +1,15 @@
+build/*
+output/*
+dist/*
+._*
+.DS_Store
+.idea
+.fusebox
+node_modules/
+npm-debug.log
+.*.swp
+.*.swo
+coverage/*
+.vscode
+cypress/screenshots/*
+cypress/videos/*
