@@ -18,10 +18,12 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.23",
     "@types/react": "^16.9.2",
     "fuse-box": "^4.0.0-next.132",
     "jest": "^24.9.0",
     "node-sass": "^4.13.0",
+    "ts-jest": "^24.1.0",
     "ts-node": "^8.1.0",
     "typescript": "^3.1.0",
     "uglify-js": "^3.0.15"
