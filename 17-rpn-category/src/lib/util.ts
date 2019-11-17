@@ -1,3 +1,3 @@
 export function isNumeric(str: string): boolean {
-  return !isNaN(parseFloat(str)) && isFinite(+str);
+  return !isNaN(parseFloat(str)) && isFinite(+str)
 }

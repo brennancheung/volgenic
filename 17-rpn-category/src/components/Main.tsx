@@ -1,17 +1,17 @@
-import * as React from 'react';
-import {Button} from '@material-ui/core';
-import {makeStyles} from '@material-ui/core/styles';
+import * as React from 'react'
+import { Button } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles(theme => ({
   root: {
     padding: theme.spacing(4),
     backgroundColor: '#eee',
   },
-}));
+}))
 
 const Main = () => {
-  const [stack, setStack] = React.useState([]);
-  const classes = useStyles({});
+  const [stack, setStack] = React.useState([])
+  const classes = useStyles({})
 
   return (
     <div className={classes.root}>
@@ -22,7 +22,7 @@ const Main = () => {
         <input type="text" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Main;
+export default Main

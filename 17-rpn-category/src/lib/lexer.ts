@@ -1,23 +1,80 @@
-const lexer = () => {};
+import { isNumeric } from './util'
 
-interface IToken {
-  type: string;
-  value: any;
+const lexer = () => {}
+
+const tokString = str => {
+  type: 'string'
+  value: str
 }
 
-type TokenType = String | Number | Function;
+type Token =
+  | { type: 'word'; value: string }
+  | { type: 'number'; value: number }
+  | { type: 'boolean'; value: boolean }
+  | { type: 'string'; value: string }
 
-/*
-function determineType(input: String): TokenType {
-  if (input)
+export const toToken = (input: string): Token => {
+  if (input === 'true') {
+    return { type: 'boolean', value: true }
+  }
+  if (input === 'false') {
+    return { type: 'boolean', value: false }
+  }
+  if (isNumeric(input)) {
+    return { type: 'number', value: Number(input) }
+  }
+  return { type: 'word', value: input }
 }
 
-function lex(input: string): IToken[] {
-  let tokens:IToken[] = []
+export const isWhitespace = (ch: string): boolean => /\s/.test(ch)
 
-  // Crude language implementation for now that is just tokens split by spaces
-  input.split(' ').forEach(part => {
-    tokens.push()
+export const lex = (input: string): Token[] => {
+  let tokens: Token[] = []
+
+  type StateType = 'token' | 'string' | 'whitespace'
+  let state: StateType = 'whitespace'
+  let accum: string = ''
+
+  // Append an additional space to eliminate the need for an EOL character
+  let padded = `${input} `
+
+  padded.split('').forEach(ch => {
+    switch (state) {
+      case 'token': {
+        if (isWhitespace(ch)) {
+          tokens.push(toToken(accum))
+          accum = ''
+          state = 'whitespace'
+          break
+        }
+        accum += ch
+        break
+      }
+
+      case 'whitespace': {
+        if (isWhitespace(ch)) break
+        if (ch === '"') {
+          state = 'string'
+          accum = ''
+          break
+        }
+        state = 'token'
+        accum = ch
+        break
+      }
+
+      case 'string': {
+        if (ch === '"') {
+          tokens.push({ type: 'string', value: accum })
+          accum = ''
+          state = 'whitespace'
+          break
+        }
+        accum += ch
+        break
+      }
+    }
   })
+
+  return tokens
 }
-*/
