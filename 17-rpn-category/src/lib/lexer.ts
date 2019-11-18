@@ -7,7 +7,7 @@ const tokString = str => {
   value: str
 }
 
-type Token =
+export type Token =
   | { type: 'word'; value: string }
   | { type: 'number'; value: number }
   | { type: 'boolean'; value: boolean }
