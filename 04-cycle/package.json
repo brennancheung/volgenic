@@ -40,7 +40,7 @@
   "dependencies": {
     "@cycle/dom": "^20.4.0",
     "@cycle/run": "^4.4.0",
-    "webpack-cli": "^3.1.0",
+    "webpack-cli": "^3.3.12",
     "xstream": "^11.7.0"
   }
 }
